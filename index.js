@@ -1,6 +1,7 @@
 import express from "express";
 import { connectDb } from "./db.connect.js";
 import sellerRoutes from "./seller/seller.routes.js";
+import productRoutes from "./product/product.routes.js";
 
 
 const app=express()
@@ -11,8 +12,9 @@ app.use(express.json());
 //connect database
 connectDb();
 
-//register seller routes
-app.use(sellerRoutes);
+//register routes
+app.use("/seller",sellerRoutes);
+app.use("/product",productRoutes);
 
 const port=process.env.PORT
 app.listen(port,()=>{

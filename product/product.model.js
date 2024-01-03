@@ -1,0 +1,68 @@
+import mongoose from "mongoose";
+
+const productSchema=new mongoose.Schema({
+    brand:{
+        type:String,
+        minlength:1,
+        maxlength:55,
+        trim:true,
+        required:true    
+    },
+    model:{
+        type:String,
+        minlength:1,
+        maxlength:100,
+        trim:true,
+        required:true
+    },
+    processor:{
+        type:String,
+        trim:true,
+        minlength:1,
+        maxlength:55,
+        required:true
+    },
+    graphics:{
+        type:String,
+        trim:true,
+        minlength:1,
+        maxlength:55,
+        required:true  
+    },
+    ram:{
+        type:String,
+        trim:true,
+        minlength:1,
+        maxlength:55,
+        required:true
+    },
+    storage:{
+        type:String,
+        trim:true,
+        minlength:1,
+        maxlength:55,
+        required:true,
+    },
+    display:{
+        type:String,
+        trim:true,
+        minlength:1,
+        maxlength:55,
+        required:true
+    },
+    price:{
+        type:Number,
+        min:1,
+        required:true
+    },
+    sellerId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:"Seller",
+    }
+},
+{
+    timestamps:true
+})
+
+export const Product=mongoose.model("Product",productSchema);

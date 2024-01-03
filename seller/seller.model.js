@@ -36,7 +36,15 @@ const sellerSchema=new mongoose.Schema({
     gender:{
         type:String,
         enum:["male","female","preferNotToSay"],
+    },
+    address:{
+        type:String,
+        required:true,
+        maxlength:500,
     }
+},
+{
+    timestamps:true
 })
 
 export const Seller=mongoose.model("Seller",sellerSchema);

@@ -18,6 +18,8 @@ export const registerSellerValidationSchema=Yup.object({
     password:Yup.string().required(),
 
     gender:Yup.string().trim().oneOf(["male","female","preferNotToSay"]),
+
+    address:Yup.string().max(500,"Address should not exceed 500 character"),
 });
 
 export const emailValidationSchema=Yup.object({

@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 const router=express.Router();
 
 //register seller in the system
-router.post("/seller/register",async(req,res)=>{
+router.post("/register",async(req,res)=>{
     //extract data from req.body
     const sellerData=req.body;
 
@@ -49,7 +49,7 @@ router.post("/seller/register",async(req,res)=>{
 })
 
 //login the seller in the system
-router.post("/seller/login",async(req,res)=>{
+router.post("/login",async(req,res)=>{
     //extract data from req.body
     const sellerData=req.body;
 
